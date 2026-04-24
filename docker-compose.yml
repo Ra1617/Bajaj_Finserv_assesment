@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  app:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: npm run run

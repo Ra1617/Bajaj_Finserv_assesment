@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Event {
+  id          String @id @default(uuid())
+  roundId     String
+  participant String
+  score       Int
+  uniqueKey   String @unique
+}
+
+model Leaderboard {
+  participant String @id
+  totalScore  Int
+}
